@@ -1,0 +1,36 @@
+body
+{
+    background-color: red;
+}
+
+{
+    background: linear-gradient(0.25turn, #1900ff, #ffffff, #ff0800);
+    padding-top: 20px;
+    text-align: center;
+    color: black;
+    text-shadow: rgb(01, 0, 0) 0px 0px 10px;
+}
+div
+{
+    padding-bottom: 16%;
+}
+h1, h2
+{
+    margin-top: 3%;
+}
+li
+{
+    list-style: none;
+}
+.css{
+    border-right: 5px solid red;
+}
+.js{
+    border-right: 15px solid yellow;
+}
+button
+{
+    background: white;
+    color: black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
