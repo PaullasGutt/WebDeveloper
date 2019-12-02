@@ -1,3 +1,5 @@
+//To Do Component en Angular HTML
+
 <p>todo works!</p>
 <section class="container-fluid">
     <div class="container">
@@ -12,10 +14,6 @@
                 <div class="col-3">{{tache.categorie}}</div> 
              </div>
                 </div>
-
-
-
-
 
         <h1>Liste de choses effectuées</h1>
         <div *ngFor="let tache of listeTache, index as i">
@@ -39,9 +37,67 @@
 
         </form>
 
-
 <div class="alert alert-primary" role="alert">
     A simple primary alert-check it out!
 </div>
     </div>
 </section>
+
+
+
+
+
+// To Do Component TS
+
+import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+
+
+
+
+@Component({
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.css']
+})
+
+export class TodoComponent implements OnInit {
+
+
+
+  constructor() { }
+
+  listeTache = [];
+  listeCategorie = ['PHP', 'CSS', 'HTML', 'JS', 'Divers'];
+
+  ngOnInit() {
+  }
+
+  ajouterTache(tacheForm: NgForm){
+    console.log(tacheForm.form.value.titre);
+
+    //Construction d'un objet temporaire
+    const monObjTemp = { titre: '', date: null, check: false, categorie: null };
+
+    //Remplissage de mon objet temporaire avec les valeurs du formulaire
+    monObjTemp.titre = tacheForm.form.value.titre;
+    monObjTemp.date = new Date();
+    monObjTemp.categorie = tacheForm.form.value.categorie;
+
+    //On Pousse la variable de type objet 'monObjTemp' dans le tableau d'objet listeTache
+    this.listeTache.push(monObjTemp);
+
+    //Intialisation du formualire
+    tacheForm.resetForm();
+
+  }
+     supprimerTache(index){
+     this.listeTache.splice(index, 1);
+
+    }
+    validTache(index){
+      this.listeTache[index].check = true;
+     }
+}
+
+
