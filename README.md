@@ -44,16 +44,10 @@
 </section>
 
 
-
-
-
-// To Do Component TS
+// To Do Component TS, Angular
 
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-
-
-
 
 @Component({
   selector: 'app-todo',
